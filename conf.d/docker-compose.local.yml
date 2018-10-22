@@ -1,0 +1,13 @@
+version: "2"
+services:
+
+  symfony_react_master:
+    container_name: "symfony_react_master"
+    image: "dockerhub.devplatform2.com/nginx110-php71"
+    volumes:
+      - "../conf.d/cron:/var/spool/cron/crontabs"
+      - "../:/var/www/"
+    restart: "unless-stopped"
+    hostname: "symfony_react_master"
+    ports:
+      - "45017:80"
